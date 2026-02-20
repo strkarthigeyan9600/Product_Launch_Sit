@@ -52,7 +52,7 @@
         }
         .main-image:hover {
             border-color: var(--primary);
-            box-shadow: 0 10px 40px rgba(229, 222, 0, 0.2);
+            box-shadow: 0 10px 40px rgba(255, 228, 1, 0.2);
         }
         .main-image img {
             width: 100%;
@@ -79,7 +79,7 @@
             text-transform: uppercase;
             letter-spacing: 0.05em;
             animation: badge-slide-in 0.6s ease-out;
-            box-shadow: 0 2px 8px rgba(229, 222, 0, 0.4);
+            box-shadow: 0 2px 8px rgba(255, 228, 1, 0.4);
         }
         @keyframes badge-slide-in {
             from {
@@ -114,7 +114,7 @@
             content: '';
             position: absolute;
             inset: 0;
-            background: linear-gradient(135deg, transparent, rgba(229, 222, 0, 0.3));
+            background: linear-gradient(135deg, transparent, rgba(255, 228, 1, 0.3));
             opacity: 0;
             transition: opacity 0.4s;
         }
@@ -124,7 +124,7 @@
         .thumbnail:hover, .thumbnail.active {
             border-color: var(--primary);
             transform: scale(1.1);
-            box-shadow: 0 5px 15px rgba(229, 222, 0, 0.3);
+            box-shadow: 0 5px 15px rgba(255, 228, 1, 0.3);
         }
         .thumbnail.active {
             border-width: 3px;
@@ -259,7 +259,7 @@
             left: -100%;
             width: 100%;
             height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(229, 222, 0, 0.1), transparent);
+            background: linear-gradient(90deg, transparent, rgba(255, 228, 1, 0.1), transparent);
             transition: left 0.5s;
         }
         .option-btn:hover::before {
@@ -268,12 +268,12 @@
         .option-btn:hover {
             border-color: var(--primary);
             transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(229, 222, 0, 0.2);
+            box-shadow: 0 5px 15px rgba(255, 228, 1, 0.2);
         }
         .option-btn.selected {
             border-color: var(--primary);
-            background: linear-gradient(135deg, rgba(229, 222, 0, 0.08) 0%, rgba(240, 232, 77, 0.12) 100%);
-            box-shadow: 0 0 0 1px var(--primary), inset 0 0 20px rgba(229, 222, 0, 0.1);
+            background: linear-gradient(135deg, rgba(255, 228, 1, 0.08) 0%, rgba(255, 237, 77, 0.12) 100%);
+            box-shadow: 0 0 0 1px var(--primary), inset 0 0 20px rgba(255, 228, 1, 0.1);
             transform: scale(1.02);
         }
         .option-size {
@@ -360,7 +360,7 @@
         }
         .add-to-cart:hover {
             transform: translateY(-3px);
-            box-shadow: 0 15px 35px rgba(229, 222, 0, 0.4), 0 8px 15px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 15px 35px rgba(255, 228, 1, 0.4), 0 8px 15px rgba(0, 0, 0, 0.2);
         }
         .add-to-cart:active {
             transform: translateY(-1px);
@@ -499,8 +499,29 @@
             .header-container {
                 padding: 0 16px;
             }
-            nav {
+            .main-nav {
                 display: none;
+                position: fixed;
+                top: 64px;
+                left: 0;
+                right: 0;
+                background: white;
+                flex-direction: column;
+                padding: 20px;
+                box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+                z-index: 100;
+                gap: 0;
+            }
+            .main-nav.active {
+                display: flex;
+            }
+            .main-nav a {
+                padding: 12px 0;
+                border-bottom: 1px solid var(--tech-border);
+                font-size: 16px;
+            }
+            .mobile-menu-btn {
+                display: flex !important;
             }
             .product-title {
                 font-size: 24px !important;
@@ -582,11 +603,11 @@
 <body>
     <header>
         <div class="header-container">
-            <div style="display: flex; align-items: center; gap: 2rem;">
+            <div style="display: flex; align-items: center; gap: 2rem; flex: 1;">
                 <a class="logo" href="index.html" style="display: flex; align-items: center; gap: 0.5rem; text-decoration: none;">
-                    <img src="assets/Kitronix.jpeg" alt="Kitronix Logo" style="height: 40px; width: auto; object-fit: contain;">
+                    <img src="assets/Kitronix.png" alt="Kite H7 Logo" style="height: 70px; width: 70px; object-fit: cover; border-radius: 50%; filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.5));">
                 </a>
-                <nav class="main-nav">
+                <nav class="main-nav" id="mainNav">
                     <a href="index.html">Home</a>
                     <a href="index.html#features">Features</a>
                     <a href="index.html#specs">Specifications</a>
@@ -595,6 +616,9 @@
                 </nav>
             </div>
             <div class="header-actions">
+                <button class="icon-btn mobile-menu-btn" id="mobileMenuBtn" style="display: none;">
+                    <span class="material-symbols-outlined">menu</span>
+                </button>
                 <button class="icon-btn">
                     <span class="material-symbols-outlined">search</span>
                 </button>
@@ -611,30 +635,30 @@
             <span>/</span>
             <a href="#">Flight Controllers</a>
             <span>/</span>
-            <span style="opacity: 1;">Kitronix</span>
+            <span style="opacity: 1;">Kite H7</span>
         </div>
 
         <div class="product-grid">
             <div class="product-images">
                 <div class="main-image">
                     <span class="material-symbols-outlined" style="position: absolute; top: 20px; right: 20px; font-size: 28px; color: var(--text-charcoal); cursor: pointer; z-index: 10; transition: all 0.3s;">search</span>
-                    <img id="mainProductImage" src="assets/Pd_img1.jpeg" alt="Kitronix Flight Controller">
+                    <img id="mainProductImage" src="assets/kitronix_1.png" alt="Kite H7 Flight Controller">
                 </div>
                 <div class="thumbnail-grid">
-                    <div class="thumbnail active" onclick="changeImage('assets/Pd_img1.jpeg', this)">
-                        <img src="assets/Pd_img1.jpeg" alt="View 1">
+                    <div class="thumbnail active" onclick="changeImage('assets/kitronix_1.png', this)">
+                        <img src="assets/kitronix_1.png" alt="View 1">
                     </div>
-                    <div class="thumbnail" onclick="changeImage('assets/Pd_img2.jpeg', this)">
-                        <img src="assets/Pd_img2.jpeg" alt="View 2">
+                    <div class="thumbnail" onclick="changeImage('assets/kitroni_2.png', this)">
+                        <img src="assets/kitroni_2.png" alt="View 2">
                     </div>
-                    <div class="thumbnail" onclick="changeImage('assets/Pd_img3.jpeg', this)">
-                        <img src="assets/Pd_img3.jpeg" alt="View 3">
+                    <div class="thumbnail" onclick="changeImage('assets/kitronix-4.png', this)">
+                        <img src="assets/kitronix-4.png" alt="View 3">
                     </div>
-                    <div class="thumbnail" onclick="changeImage('assets/Pd_img1.jpeg', this)">
-                        <img src="assets/Pd_img1.jpeg" alt="View 4">
+                    <div class="thumbnail" onclick="changeImage('assets/kitronix_5.png', this)">
+                        <img src="assets/kitronix_5.png" alt="View 4">
                     </div>
-                    <div class="thumbnail" onclick="changeImage('assets/Pd_img2.jpeg', this)">
-                        <img src="assets/Pd_img2.jpeg" alt="View 5">
+                    <div class="thumbnail" onclick="changeImage('assets/kitronix_6.png', this)">
+                        <img src="assets/kitronix_6.png" alt="View 5">
                     </div>
                 </div>
 
@@ -665,7 +689,7 @@
             <div class="product-info">
                 <div class="product-header">
                     <div class="product-tag" style="color: var(--text-dark); opacity: 0.7; margin-bottom: 8px;">Flight Controllers</div>
-                    <h1 class="product-title" style="font-size: 32px; margin-bottom: 12px;">Kitronix Flight Controller for Advanced Drone Navigation System</h1>
+                    <h1 class="product-title" style="font-size: 32px; margin-bottom: 12px;">Kite H7 Flight Controller for Advanced Drone Navigation System</h1>
                     
                     <div class="rating">
                         <div class="stars">
@@ -711,7 +735,7 @@
                         <ul style="list-style: none; padding: 0; line-height: 1.8; color: var(--text-dark); font-size: 14px;">
                             <li style="display: flex; align-items: center; gap: 8px; margin-bottom: 6px;">
                                 <span class="material-symbols-outlined" style="font-size: 18px; color: var(--primary);">memory</span>
-                                <span>Kitronix main board with pre-installed firmware</span>
+                                <span>Kite H7 main board with pre-installed firmware</span>
                             </li>
                             <li style="display: flex; align-items: center; gap: 8px; margin-bottom: 6px;">
                                 <span class="material-symbols-outlined" style="font-size: 18px; color: var(--primary);">cable</span>
@@ -860,7 +884,7 @@
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2026 Kitronix. All rights reserved.</p>
+                <p>&copy; 2026 Kite H7. All rights reserved.</p>
                 <p>Designed for Professional UAV Applications</p>
             </div>
         </div>
@@ -872,6 +896,18 @@
             document.getElementById('mainProductImage').src = imageSrc;
             document.querySelectorAll('.thumbnail').forEach(t => t.classList.remove('active'));
             element.classList.add('active');
+        }
+
+        // Mobile menu toggle
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const mainNav = document.getElementById('mainNav');
+        
+        if (mobileMenuBtn) {
+            mobileMenuBtn.addEventListener('click', () => {
+                mainNav.classList.toggle('active');
+                const icon = mobileMenuBtn.querySelector('.material-symbols-outlined');
+                icon.textContent = mainNav.classList.contains('active') ? 'close' : 'menu';
+            });
         }
 
         // Quantity controls
@@ -915,7 +951,7 @@
         </button>
         <div id="chatbotPopup" style="display: none; position: absolute; bottom: 100px; right: 0; background: white; border-radius: 12px; padding: 20px; box-shadow: 0 10px 40px rgba(0,0,0,0.2); width: 300px; border: 2px solid var(--tech-border);">
             <p style="font-weight: 700; color: var(--text-charcoal); margin-bottom: 8px;">Hi, How can I help you today?</p>
-            <p style="font-size: 12px; color: var(--text-dark); margin-bottom: 16px;">Have questions about Kitronix? I'm here to assist!</p>
+            <p style="font-size: 12px; color: var(--text-dark); margin-bottom: 16px;">Have questions about Kite H7? I'm here to assist!</p>
             <button style="width: 100%; padding: 12px; background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%); color: white; border: none; border-radius: 6px; font-weight: 700; cursor: pointer;">Start Chat</button>
         </div>
     </div>

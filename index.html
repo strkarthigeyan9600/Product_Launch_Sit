@@ -15,11 +15,11 @@
 <!-- Header -->
 <header>
     <div class="header-container">
-        <div style="display: flex; align-items: center; gap: 2rem;">
+        <div style="display: flex; align-items: center; gap: 2rem; flex: 1;">
             <a class="logo" href="#" style="display: flex; align-items: center; gap: 0.5rem;">
-                <img src="assets/Kitronix.jpeg" alt="Kitronix Logo" style="height: 40px; width: auto; object-fit: contain;">
+                <img src="assets/Kitronix.png" alt="Kite H7 Logo" style="height: 70px; width: 70px; object-fit: cover; border-radius: 50%; filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.5));">
             </a>
-            <nav>
+            <nav id="mainNavIndex">
                 <a href="#overview">Overview</a>
                 <a href="#features">Features</a>
                 <a href="#specs">Specifications</a>
@@ -28,29 +28,32 @@
                 <a href="product.html">Purchase</a>
             </nav>
         </div>
-        <a href="product.html" class="btn-primary">BUY NOW</a>
+        <div style="display: flex; align-items: center; gap: 0.75rem;">
+            <button class="icon-btn mobile-menu-btn" id="mobileMenuBtnIndex" style="display: none; width: 40px; height: 40px; border: 2px solid var(--tech-border); background: transparent; color: var(--text-charcoal); cursor: pointer; align-items: center; justify-content: center;">
+                <span class="material-symbols-outlined" style="font-size: 20px;">menu</span>
+            </button>
+        </div>
     </div>
 </header>
 
 <!-- Hero Section -->
-<section class="hero-section">
-    <div class="hero-container">
+<section class="hero-section" style="background-image: url('assets/kitronix_1.png'); background-size: cover; background-position: center; background-repeat: no-repeat; position: relative;">
+    <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: linear-gradient(to right, rgba(255, 255, 255, 0.85) 0%, rgba(255, 255, 255, 0.65) 50%, rgba(255, 255, 255, 0.55) 100%); z-index: 1;"></div>
+    <div class="hero-container" style="position: relative; z-index: 2;">
         <div class="hero-grid">
             <div class="hero-content">
-                <div class="hero-badge">
+                <!-- <div class="hero-badge">
                     <span class="pulse-dot"></span>
-                    <span>Next Generation Flight Controller</span>
-                </div>
+                    <!-- <span>Flight Controllers for Hobbyists</span>
+                </div> -->
                 <div>
-                    <h1 class="hero-title">Kitronix</h1>
                     <p class="hero-description">
-                        Professional-grade autopilot system with advanced triple-redundancy architecture and industrial-grade sensors for mission-critical operations.
+                        Kite H7 is a high-performance STM32H7-based flight controller. Compatible with any customized firmware stack including PX4 & ArduPilot. It delivers the processing headroom and flexibility required to prototype with a focus on reliability, learning and accessible innovation.
                     </p>
                 </div>
                 <div class="hero-buttons">
-                    <a href="product.html" class="btn-primary" style="padding: 1rem 2rem;">
-                        BUY NOW
-                        <span class="material-symbols-outlined" style="margin-left: 0.5rem; font-size: 20px;">shopping_cart</span>
+                    <a href="product.html" class="btn-primary">
+                        Contact Us
                     </a>
                     <a href="#specs" class="btn-secondary">
                         VIEW SPECIFICATIONS
@@ -71,37 +74,73 @@
                     </div>
                 </div>
             </div>
-            <div class="hero-image">
-                <div class="hero-glow" style="position: absolute; inset: 0;"></div>
-                <div class="hero-image-wrapper tech-grid-bg">
-                    <img alt="Kitronix Flight Controller" src="assets/Pd_img1.jpeg"/>
+        </div>
+    </div>
+</section>
+
+<!-- Dark Section 1: Dual IMU Architecture -->
+<section class="dark-section">
+    <div>
+        <h1 style="font-size: 60px;">Kite H7</h1>
+    </div>
+    <br>
+    <div class="dark-section-container">
+        <div>
+            <h2>Dual IMU Architecture</h2>
+            <p style="margin-bottom: 2rem;">
+                Advanced triple-redundant sensor architecture delivering exceptional precision and reliability for mission-critical applications.
+            </p>
+            <div style="display: flex; flex-direction: column; gap: 0.75rem;">
+                <div style="border-left: 3px solid #ffe401; padding-left: 1.5rem;">
+                    <h3 style="color: #ffe401; font-size: 1.125rem; margin-bottom: 0.25rem; font-weight: 600;">TDK InvenSense ICM-42688</h3>
+                    <p style="font-size: 0.95rem; opacity: 0.85;">High-performance 6-axis MEMS sensor</p>
+                </div>
+                <div style="border-left: 3px solid #ffe401; padding-left: 1.5rem;">
+                    <h3 style="color: #ffe401; font-size: 1.125rem; margin-bottom: 0.25rem; font-weight: 600;">Bosch BMI-088</h3>
+                    <p style="font-size: 0.95rem; opacity: 0.85;">Industrial-grade IMU with superior stability</p>
+                </div>
+                <div style="border-left: 3px solid #ffe401; padding-left: 1.5rem;">
+                    <h3 style="color: #ffe401; font-size: 1.125rem; margin-bottom: 0.25rem; font-weight: 600;">Onboard Compass – BMM350</h3>
+                    <p style="font-size: 0.95rem; opacity: 0.85;">Precision magnetometer for accurate heading</p>
                 </div>
             </div>
         </div>
+        <div class="feature-image">
+            <img alt="Dual IMU Sensors" src="assets/kitroni_2.png" style="max-width: 500px; margin: 0 auto; display: block;"/>
+        </div>
     </div>
 </section>
 
-<!-- Dark Section 1: ADIS16470 IMU -->
+<!-- Dark Section 2: Dual-IMU Performance -->
+<section class="dark-section">
+    <div class="dark-section-container">
+        <div class="feature-image">
+            <img alt="Dual-IMU System" src="assets/kitronix-4.png" style="max-width: 500px; margin: 0 auto; display: block;"/>
+        </div>
+        <div>
+            <h2>Enhanced Stability & Precision</h2>
+            <p style="margin-bottom: 1.5rem;">
+                This dual-IMU setup improves vibration resistance and increases attitude estimation accuracy. Redundant sensing ensures reliable flight performance even under dynamic maneuvers.
+            </p>
+            <p style="margin-bottom: 1.5rem;">
+                The system continuously refines motion data for stable real-time control. An onboard compass BMM350 from Bosch provides precise heading reference.
+            </p>
+            <p>
+                Together, these sensors enable stable navigation, improved yaw control, and dependable UAV operation.
+            </p>
+        </div>
+    </div>
+</section>
+
+<!-- Dark Section 3: H7 Processor -->
 <section class="dark-section">
     <div class="dark-section-container">
         <div>
-            <h2>ADIS16470 IMU</h2>
+            <h2>H7 Processor Powerful Performance</h2>
             <p>
-                The Kitronix intelligent controller adopts the high-end ADIS16470 chip, which is commonly used in cutting-edge aerospace projects due to its exceptional gyroscope and acceleration drift performance. This time, we have integrated it into the open-source intelligent controller. After meticulous fine-tuning, it significantly enhances the sensor performance of the intelligent controller for superior operational capabilities.
+                Kite H7 autopilot uses STM32H743 series processors CPU, Cortex-M7 core (with double precision Floating-Point Unit). It makes operating frequency increase to 480MHz, 2MB Flash, 1MB RAM. Meet the higher computing needs of flight controllers. Compared with the STM32F7 product line, the dynamic power consumption efficiency is doubled.
             </p>
-        </div>
-        <div class="feature-image">
-            <img alt="ADIS16470 IMU Sensor" src="assets/Pd_img2.jpeg" style="max-width: 500px; margin: 0 auto; display: block;"/>
-        </div>
-    </div>
-</section>
-
-<!-- Dark Section 2: H7 Processor -->
-<section class="dark-section">
-    <div class="dark-section-container">
-        <div class="feature-image">
-            <img alt="STM32H7 Processor" src="assets/Pd_img3.jpeg" style="max-width: 500px; margin: 0 auto; display: block;"/>
-            <div class="stat-badges">
+            <div class="stat-badges" style="margin-top: 2rem;">
                 <div class="stat-badge cyan">
                     <div class="stat-value">M7</div>
                 </div>
@@ -114,77 +153,8 @@
                 </div>
             </div>
         </div>
-        <div>
-            <h2>H7 Processor Powerful Performance</h2>
-            <p>
-                Kitronix autopilot uses STM32H743 series processors CPU, Cortex-M7 core (with double precision Floating-Point Unit). It makes operating frequency increase to 480Mhz, 2MB Flash, 1MB RAM. Meet the higher computing needs of flight controllers. Compared with the STM32F7 product line, the dynamic power consumption efficiency is doubled.
-            </p>
-        </div>
-    </div>
-</section>
-
-<!-- Dark Section 3: Advanced Sensors -->
-<section class="dark-section">
-    <div class="dark-section-container">
-        <div>
-            <h2>The Sensor is Upgraded Again</h2>
-            <p>
-                The sensor is one of the important indicators to evaluate the Autopilot. This time, we have added the ICM-42688-P sensor. Compared with the traditional consumer IMU, the noise figure of ICM-42688-P is reduced by 40%, and the temperature stability is improved 2 times, so as to ensure the highest accuracy measurement in the case of temperature changes.
-            </p>
-            <div class="stat-badges" style="margin-top: 2rem;">
-                <div class="stat-badge cyan">
-                    <div class="stat-label">Noise figure</div>
-                    <div class="stat-value">40<span style="font-size: 1.5rem;">%</span></div>
-                </div>
-                <div class="stat-badge cyan">
-                    <div class="stat-label">Double temperature</div>
-                    <div class="stat-value">2<span style="font-size: 1.5rem;">x</span></div>
-                </div>
-            </div>
-        </div>
         <div class="feature-image">
-            <img alt="ICM-42688-P Sensor" src="assets/Pd_img1.jpeg" style="max-width: 500px; margin: 0 auto; display: block;"/>
-        </div>
-    </div>
-</section>
-
-<!-- Overview Section -->
-<section id="overview" class="light-section">
-    <div class="section-container">
-        <div class="section-title">
-            <h2>Product Overview</h2>
-            <div class="section-divider"></div>
-        </div>
-        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: center;">
-            <div style="display: flex; flex-direction: column; gap: 1.5rem;">
-                <p style="font-size: 1.125rem; line-height: 1.8; color: rgba(26, 26, 26, 0.8);">
-                    The Kitronix represents the pinnacle of flight controller technology, engineered for professional UAV applications demanding the highest levels of reliability and performance.
-                </p>
-                <p style="color: rgba(26, 26, 26, 0.8); line-height: 1.6;">
-                    Featuring triple-redundant IMU architecture, industrial-grade components, and an advanced STM32H7 processor, the Kitronix ensures mission success even in the most demanding environments.
-                </p>
-                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; padding-top: 1.5rem;">
-                    <div style="background-color: white; padding: 1.5rem; border: 1px solid var(--tech-border);">
-                        <div style="color: var(--primary); margin-bottom: 0.5rem;">
-                            <span class="material-symbols-outlined" style="font-size: 2.5rem;">verified</span>
-                        </div>
-                        <h4 style="font-weight: 700; color: var(--text-charcoal); margin-bottom: 0.25rem;">Certified Quality</h4>
-                        <p style="font-size: 0.875rem; color: rgba(26, 26, 26, 0.6);">ISO 9001 Manufacturing</p>
-                    </div>
-                    <div style="background-color: white; padding: 1.5rem; border: 1px solid var(--tech-border);">
-                        <div style="color: var(--primary); margin-bottom: 0.5rem;">
-                            <span class="material-symbols-outlined" style="font-size: 2.5rem;">support_agent</span>
-                        </div>
-                        <h4 style="font-weight: 700; color: var(--text-charcoal); margin-bottom: 0.25rem;">24/7 Support</h4>
-                        <p style="font-size: 0.875rem; color: rgba(26, 26, 26, 0.6);">Expert Technical Team</p>
-                    </div>
-                </div>
-            </div>
-            <div style="position: relative;">
-                <div style="background-color: white; padding: 1.5rem; border: 1px solid var(--tech-border);">
-                    <img alt="X7 Plus Pro Detail View" src="assets/Pd_img2.jpeg" style="width: 100%; height: auto; object-fit: cover;"/>
-                </div>
-            </div>
+            <img alt="STM32H7 Processor" src="assets/kitronix_5.png" style="max-width: 500px; margin: 0 auto; display: block;"/>
         </div>
     </div>
 </section>
@@ -279,81 +249,6 @@
                     </div>
                 </div>
             </div>
-            <div class="spec-card">
-                <h3>Sensors</h3>
-                <div>
-                    <div class="spec-item">
-                        <span class="spec-label">IMU Redundancy</span>
-                        <span class="spec-value">Triple (3x)</span>
-                    </div>
-                    <div class="spec-item">
-                        <span class="spec-label">Gyroscope</span>
-                        <span class="spec-value">BMI088 x3</span>
-                    </div>
-                    <div class="spec-item">
-                        <span class="spec-label">Accelerometer</span>
-                        <span class="spec-value">BMI088 x3</span>
-                    </div>
-                    <div class="spec-item">
-                        <span class="spec-label">Barometer</span>
-                        <span class="spec-value">MS5611 x2</span>
-                    </div>
-                    <div class="spec-item">
-                        <span class="spec-label">Magnetometer</span>
-                        <span class="spec-value">IST8310</span>
-                    </div>
-                </div>
-            </div>
-            <div class="spec-card">
-                <h3>Interfaces</h3>
-                <div>
-                    <div class="spec-item">
-                        <span class="spec-label">UART Ports</span>
-                        <span class="spec-value">7</span>
-                    </div>
-                    <div class="spec-item">
-                        <span class="spec-label">I2C Ports</span>
-                        <span class="spec-value">4</span>
-                    </div>
-                    <div class="spec-item">
-                        <span class="spec-label">CAN Ports</span>
-                        <span class="spec-value">2</span>
-                    </div>
-                    <div class="spec-item">
-                        <span class="spec-label">SPI Ports</span>
-                        <span class="spec-value">1</span>
-                    </div>
-                    <div class="spec-item">
-                        <span class="spec-label">PWM Outputs</span>
-                        <span class="spec-value">14</span>
-                    </div>
-                </div>
-            </div>
-            <div class="spec-card">
-                <h3>Power & Physical</h3>
-                <div>
-                    <div class="spec-item">
-                        <span class="spec-label">Input Voltage</span>
-                        <span class="spec-value">4.3V - 5.5V</span>
-                    </div>
-                    <div class="spec-item">
-                        <span class="spec-label">Power Consumption</span>
-                        <span class="spec-value">~5W</span>
-                    </div>
-                    <div class="spec-item">
-                        <span class="spec-label">Dimensions</span>
-                        <span class="spec-value">92 x 54 x 24mm</span>
-                    </div>
-                    <div class="spec-item">
-                        <span class="spec-label">Weight</span>
-                        <span class="spec-value">95g</span>
-                    </div>
-                    <div class="spec-item">
-                        <span class="spec-label">Operating Temp</span>
-                        <span class="spec-value">-40°C to 85°C</span>
-                    </div>
-                </div>
-            </div>
         </div>
     </div>
 </section>
@@ -367,13 +262,13 @@
         </div>
         <div class="gallery-grid">
             <div class="gallery-item">
-                <img alt="Kitronix - View 1" src="assets/Pd_img1.jpeg"/>
+                <img alt="Kite H7 - View 1" src="assets/kitronix_1.png"/>
             </div>
             <div class="gallery-item">
-                <img alt="Kitronix - View 2" src="assets/Pd_img2.jpeg"/>
+                <img alt="Kite H7 - View 2" src="assets/kitroni_2.png"/>
             </div>
             <div class="gallery-item">
-                <img alt="Kitronix - View 3" src="assets/Pd_img3.jpeg"/>
+                <img alt="Kite H7 - View 3" src="assets/kitronix-4.png"/>
             </div>
         </div>
     </div>
@@ -517,11 +412,25 @@
             </div>
         </div>
         <div class="footer-bottom">
-            <p>© 2026 Kitronix. All rights reserved.</p>
+            <p>© 2026 Kite H7. All rights reserved.</p>
             <p>Designed for Professional UAV Applications</p>
         </div>
     </div>
 </footer>
+
+<script>
+    // Mobile menu toggle for index page
+    const mobileMenuBtnIndex = document.getElementById('mobileMenuBtnIndex');
+    const mainNavIndex = document.getElementById('mainNavIndex');
+    
+    if (mobileMenuBtnIndex) {
+        mobileMenuBtnIndex.addEventListener('click', () => {
+            mainNavIndex.classList.toggle('active');
+            const icon = mobileMenuBtnIndex.querySelector('.material-symbols-outlined');
+            icon.textContent = mainNavIndex.classList.contains('active') ? 'close' : 'menu';
+        });
+    }
+</script>
 
 </body>
 </html>
