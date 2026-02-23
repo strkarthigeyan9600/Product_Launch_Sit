@@ -37,46 +37,38 @@
 <!-- Hero Section Carousel -->
 <section id="overview" class="hero-carousel">
 
-    <!-- Slide 0: Hero (white) -->
-    <div class="hero-carousel-slide" style="background-image: url('assets/kitronix_1.png'); background-size: cover; background-position: center;">
-        <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: linear-gradient(to right, rgba(0,0,0,0.88) 0%, rgba(0,0,0,0.65) 50%, rgba(0,0,0,0.35) 100%);"></div>
-        <div class="hero-container" style="position: relative; z-index: 2;">
-            <div class="hero-grid">
-                <div class="hero-content">
-                    <div>
-                        <p class="hero-description">
-                            Kite H7 is a high-performance STM32H7-based flight controller. Compatible with any customized firmware stack including PX4 &amp; ArduPilot. It delivers the processing headroom and flexibility required to prototype with a focus on reliability, learning and accessible innovation.
-                        </p>
-                    </div>
-                    <div class="hero-buttons">
-                        <a href="https://wa.me/918072816532?text=Hi%2C%20I%27m%20interested%20in%20the%20Kite%20H7%20Flight%20Controller" target="_blank" class="btn-primary">Contact Us</a>
-                        <a href="product.html" class="btn-secondary">SPECIFICATIONS</a>
-                    </div>
-                    <div class="hero-stats">
-                        <div class="hero-stat"><p>Processor</p><p>STM32H7</p></div>
-                        <div class="hero-stat"><p>IMU Units</p><p>Triple</p></div>
-                        <div class="hero-stat"><p>Frequency</p><p>480 MHz</p></div>
-                    </div>
-                </div>
+    <!-- Slide 0: Hero Intro (cinematic) -->
+    <div class="hero-carousel-slide" style="background-image: url('assets/WhatsApp Image 2026-02-23 at 3.52.11 PM.jpeg'); background-size: cover; background-position: center;">
+        <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: linear-gradient(to bottom, rgba(0,0,0,0.25) 0%, rgba(0,0,0,0.15) 50%, rgba(0,0,0,0.55) 100%);"></div>
+        <div class="hero-container" style="position: relative; z-index: 2; display: flex; align-items: flex-end; padding-bottom: 6rem;">
+            <div style="max-width: 700px;">
+                <p style="font-size: clamp(0.875rem, 1.5vw, 1rem); letter-spacing: 0.2em; text-transform: uppercase; color: #ffe401; font-weight: 600; margin-bottom: 1rem;">Kitronix - High Performance Autopilot Platform</span></p>
+                <h1 style="font-size: clamp(2.5rem, 7vw, 5.5rem); font-weight: 700; color: #fff; line-height: 1.05; margin-bottom: 1.5rem; text-shadow: 0 4px 24px rgba(0,0,0,0.6);">Kite H7</h1>
+                <p class="hero-intro-desc" style="font-size: clamp(1rem, 2vw, 1.25rem); color: rgba(255,255,255,0.88); line-height: 1.7; margin-bottom: 2rem; max-width: 560px;">STM32H7-powered flight controller built for<br> custom firmware development. Advanced <br>dual-IMU architecture for stable and<br>precise flight control.</p>
+                <!-- <div class="hero-buttons">
+                    <a href="#contact" class="btn-primary">Contact Us</a>
+                    <a href="product.html" class="btn-secondary">SPECIFICATIONS</a>
+                </div> -->
             </div>
         </div>
     </div>
 
     <!-- Slide 1: Dual IMU Architecture (dark) -->
-    <div class="hero-carousel-slide slide-dark slide-imu" style="background:#000; color:#fff;">
+    <div class="hero-carousel-slide slide-dark slide-imu" style="background-image: url('assets/kitroni_2.png'); background-size: cover; background-position: center; color:#fff;">
+        <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: linear-gradient(to right, rgba(0,0,0,0.88) 0%, rgba(0,0,0,0.72) 50%, rgba(0,0,0,0.55) 100%);"></div>
         <div class="hero-slide-dark-inner">
             <div>
-                <h1 style="font-size: clamp(2rem, 5vw, 60px); margin-bottom: 1.5rem;">Kite H7</h1>
+                
                 <h2>Dual IMU Architecture</h2>
-                <p style="margin-bottom: 2rem;">Advanced triple-redundant sensor architecture delivering exceptional precision and reliability for mission-critical applications.</p>
+                <p style="margin-bottom: 2rem;">Advanced Dual-Redundant sensor architecture delivering exceptional precision and reliability for mission-critical flight applications.</p>
                 <div style="display: flex; flex-direction: column; gap: 0.75rem;">
                     <div style="border-left: 3px solid #ffe401; padding-left: 1.5rem;">
                         <h3 style="color:#ffe401; font-size:1.125rem; margin-bottom:0.25rem; font-weight:600;">TDK InvenSense ICM-42688</h3>
-                        <p style="font-size:0.95rem; opacity:0.85;">High-performance 6-axis MEMS sensor</p>
+                        <p style="font-size:0.95rem; opacity:0.85;">±16 g accel, ±2000 dps gyro for precise flight control.</p>
                     </div>
                     <div style="border-left: 3px solid #ffe401; padding-left: 1.5rem;">
-                        <h3 style="color:#ffe401; font-size:1.125rem; margin-bottom:0.25rem; font-weight:600;">Bosch BMI-088</h3>
-                        <p style="font-size:0.95rem; opacity:0.85;">Industrial-grade IMU with superior stability</p>
+                        <h3 style="color:#ffe401; font-size:1.125rem; margin-bottom:0.25rem; font-weight:600;">Bosch BMM-350</h3>
+                        <p style="font-size:0.95rem; opacity:0.85;">±24 g accel, ±2000 dps gyro for stable sensing.</p>
                     </div>
                     <div style="border-left: 3px solid #ffe401; padding-left: 1.5rem;">
                         <h3 style="color:#ffe401; font-size:1.125rem; margin-bottom:0.25rem; font-weight:600;">Onboard Compass – BMM350</h3>
@@ -85,13 +77,14 @@
                 </div>
             </div>
             <div class="feature-image">
-                <img alt="Dual IMU Sensors" src="assets/kitroni_2.png" style="max-width:500px; margin:0 auto; display:block;"/>
+                <img alt="Dual IMU Sensors" src="assets/2-Photoroom.png" style="max-width:500px; margin:0 auto; display:block;"/>
             </div>
         </div>
     </div>
 
     <!-- Slide 2: Enhanced Stability (dark) -->
-    <div class="hero-carousel-slide slide-dark slide-stability" style="background:#000; color:#fff;">
+    <!-- <div class="hero-carousel-slide slide-dark slide-stability" style="background-image: url('assets/kitronix-4.png'); background-size: cover; background-position: center; color:#fff;">
+        <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: linear-gradient(to right, rgba(0,0,0,0.88) 0%, rgba(0,0,0,0.72) 50%, rgba(0,0,0,0.55) 100%);"></div>
         <div class="hero-slide-dark-inner">
             <div>
                 <h2 style="color:#fff;">Enhanced Stability &amp; Precision</h2>
@@ -100,13 +93,14 @@
                 <p>Together, these sensors enable stable navigation, improved yaw control, and dependable UAV operation.</p>
             </div>
             <div class="feature-image">
-                <img alt="Dual-IMU System" src="assets/kitronix-4.png" style="max-width:500px; margin:0 auto; display:block;"/>
+                <img alt="Dual-IMU System" src="assets/kitronix-4-Photoroom.png" style="max-width:500px; margin:0 auto; display:block;"/>
             </div>
         </div>
-    </div>
+    </div> -->
 
     <!-- Slide 3: H7 Processor (dark) -->
-    <div class="hero-carousel-slide slide-dark slide-processor" style="background:#000; color:#fff;">
+    <div class="hero-carousel-slide slide-dark slide-processor" style="background-image: url('assets/kitronix_5.png'); background-size: cover; background-position: center; color:#fff;">
+        <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: linear-gradient(to right, rgba(0,0,0,0.88) 0%, rgba(0,0,0,0.72) 50%, rgba(0,0,0,0.55) 100%);"></div>
         <div class="hero-slide-dark-inner">
             <div>
                 <h2 style="color:#fff;">H7 Processor – Dual-Core Real-Time Control</h2>
@@ -134,8 +128,33 @@
             </div>
 
             <div class="feature-image">
-                <img alt="STM32H7 Processor" src="assets/kitronix_5.png"
+                <img alt="STM32H7 Processor" src="assets/kitronix_5-Photoroom.png"
                      style="max-width:500px; margin:0 auto; display:block;" />
+            </div>
+        </div>
+    </div>
+
+    <!-- Slide 3 (last): Hero (white) -->
+    <div class="hero-carousel-slide" style="background-image: url('assets/kitronix_1.png'); background-size: cover; background-position: center;">
+        <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: linear-gradient(to right, rgba(0,0,0,0.88) 0%, rgba(0,0,0,0.65) 50%, rgba(0,0,0,0.35) 100%);"></div>
+        <div class="hero-container" style="position: relative; z-index: 2;">
+            <div class="hero-grid">
+                <div class="hero-content">
+                    <div>
+                        <p class="hero-description">
+                            Kite H7 is a high-performance STM32H7-based flight controller. Compatible with any customized firmware stack including PX4 &amp; ArduPilot. It delivers the processing headroom and flexibility required to prototype with a focus on reliability, learning and accessible innovation.
+                        </p>
+                    </div>
+                    <div class="hero-buttons">
+                        <a href="#contact" class="btn-primary">Contact Us</a>
+                        <a href="product.html" class="btn-secondary">SPECIFICATIONS</a>
+                    </div>
+                    <div class="hero-stats">
+                        <div class="hero-stat"><p>Processor</p><p>STM32H7</p></div>
+                        <div class="hero-stat"><p>IMU Units</p><p>Dual IMU</p></div>
+                        <div class="hero-stat"><p>Frequency</p><p>480 MHz</p></div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -148,6 +167,7 @@
         <span class="hero-dot" data-index="1"></span>
         <span class="hero-dot" data-index="2"></span>
         <span class="hero-dot" data-index="3"></span>
+        <!-- <span class="hero-dot" data-index="4"></span> -->
     </div>
 
 </section>
@@ -198,13 +218,13 @@
         </div>
         <div class="gallery-grid">
             <div class="gallery-item">
-                <img alt="Kite H7 - View 1" src="assets/kitronix_1.png"/>
+                <img alt="Kite H7 - View 1" src="assets/4-Photoroom.png"/>
             </div>
             <div class="gallery-item">
-                <img alt="Kite H7 - View 2" src="assets/kitroni_2.png"/>
+                <img alt="Kite H7 - View 2" src="assets/kitroni_2-Photoroom.png"/>
             </div>
             <div class="gallery-item">
-                <img alt="Kite H7 - View 3" src="assets/kitronix-4.png"/>
+                <img alt="Kite H7 - View 3" src="assets/kitronix-4-Photoroom.png"/>
             </div>
         </div>
     </div>
@@ -458,9 +478,13 @@
 
         // dir: +1 = incoming slide comes from right (forward)
         //      -1 = incoming slide comes from left (backward)
-        function goTo(newIdx, dir) {
+        // dur: optional CSS duration string (fast for manual, slow for auto)
+        function goTo(newIdx, dir, dur) {
             if (busy || newIdx === current) return;
             busy = true;
+
+            dur = dur || '2.0s';
+            const ms = Math.round(parseFloat(dur) * 1000) + 50;
 
             const outSlide = slides[current];
             const inSlide  = slides[newIdx];
@@ -471,7 +495,6 @@
 
             inSlide.getBoundingClientRect(); // force reflow
 
-            const dur = '0.65s';
             inSlide.style.transition  = `transform ${dur} cubic-bezier(0.4,0,0.2,1)`;
             outSlide.style.transition = `transform ${dur} cubic-bezier(0.4,0,0.2,1)`;
 
@@ -486,26 +509,26 @@
                 current = newIdx;
                 updateDots(current);
                 busy = false;
-            }, 680);
+            }, ms);
         }
 
-        function next() {
-            goTo(current === TOTAL - 1 ? 0 : current + 1, +1);
+        function next(dur) {
+            goTo(current === TOTAL - 1 ? 0 : current + 1, +1, dur);
         }
 
-        function prev() {
-            goTo((current - 1 + TOTAL) % TOTAL, -1);
+        function prev(dur) {
+            goTo((current - 1 + TOTAL) % TOTAL, -1, dur);
         }
 
         function startAuto() {
             clearInterval(autoTimer);
-            autoTimer = setInterval(next, 3000);
+            autoTimer = setInterval(() => next(), 22000);
         }
 
         // Arrow buttons — desktop only
         if (isDesktop()) {
-            nextBtn.addEventListener('click', () => { next(); startAuto(); });
-            prevBtn.addEventListener('click', () => { prev(); startAuto(); });
+            nextBtn.addEventListener('click', () => { next('0.25s'); startAuto(); });
+            prevBtn.addEventListener('click', () => { prev('0.25s'); startAuto(); });
             carousel.addEventListener('mouseenter', () => clearInterval(autoTimer));
             carousel.addEventListener('mouseleave', startAuto);
         }
@@ -513,7 +536,7 @@
         // Dot navigation
         dots.forEach(d => d.addEventListener('click', () => {
             const idx = +d.dataset.index;
-            goTo(idx, idx > current ? +1 : -1);
+            goTo(idx, idx > current ? +1 : -1, '0.25s');
             startAuto();
         }));
 
@@ -525,11 +548,11 @@
             if (!isDragging) return;
             isDragging = false;
             const diff = startX - e.clientX;
-            if (Math.abs(diff) > 50) { diff > 0 ? next() : prev(); startAuto(); }
+            if (Math.abs(diff) > 50) { diff > 0 ? next('0.25s') : prev('0.25s'); startAuto(); }
         });
         carousel.addEventListener('touchend', e => {
             const diff = startX - e.changedTouches[0].clientX;
-            if (Math.abs(diff) > 50) { diff > 0 ? next() : prev(); startAuto(); }
+            if (Math.abs(diff) > 50) { diff > 0 ? next('0.25s') : prev('0.25s'); startAuto(); }
         });
 
         startAuto();
@@ -540,7 +563,7 @@
 <script>
 (function () {
     // ⚠️  Paste your deployed Google Apps Script web-app URL here:
-    var SCRIPT_URL = 'YOUR_GOOGLE_APPS_SCRIPT_WEB_APP_URL';
+    var SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxrwusz4NQMGzJ3lSgJfeQjDi6f46Hv3zquNbRNoWMnG7T2a8L5xbrnxss0R9OTeMTH/exec';
 
     var form       = document.getElementById('contactForm');
     var submitBtn  = document.getElementById('contactSubmitBtn');
@@ -564,8 +587,8 @@
         form.addEventListener('submit', function (e) {
             e.preventDefault();
 
-            if (!SCRIPT_URL || SCRIPT_URL === 'YOUR_GOOGLE_APPS_SCRIPT_WEB_APP_URL') {
-                showStatus('⚠️ Google Sheets not connected yet. Please set the SCRIPT_URL in index.html.', false);
+            if (!SCRIPT_URL || !SCRIPT_URL.includes('https://script.google.com/macros/s/AKfycbxrwusz4NQMGzJ3lSgJfeQjDi6f46Hv3zquNbRNoWMnG7T2a8L5xbrnxss0R9OTeMTH/exec')) {
+                showStatus('Google Sheets not connected yet. Please set the SCRIPT_URL in index.html.', false);
                 return;
             }
 
@@ -589,11 +612,11 @@
                 body   : payload.toString()
             })
             .then(function () {
-                showStatus('✅ Message sent! We will get back to you shortly.', true);
+                showStatus('Message sent! We will get back to you shortly.', true);
                 form.reset();
             })
             .catch(function () {
-                showStatus('❌ Something went wrong. Please email us directly.', false);
+                showStatus('Something went wrong. Please email us directly.', false);
             })
             .finally(function () {
                 submitBtn.disabled    = false;
@@ -601,6 +624,22 @@
             });
         });
     }
+})();
+</script>
+
+<!-- ─── Smooth Scroll for Nav Links ─── -->
+<script>
+(function () {
+    document.querySelectorAll('a[href^="#"]').forEach(function (link) {
+        link.addEventListener('click', function (e) {
+            var href = link.getAttribute('href');
+            if (!href || href === '#') return;
+            var target = document.querySelector(href);
+            if (!target) return;
+            e.preventDefault();
+            target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        });
+    });
 })();
 </script>
 
