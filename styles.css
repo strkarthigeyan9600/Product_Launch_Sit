@@ -438,6 +438,135 @@ nav a:hover {
     opacity: 0.9;
 }
 
+/* ── Feature Split Sections ───────────────────────────────── */
+.feature-split-section {
+    padding: 5rem 1rem;
+    border-top: 1px solid var(--tech-border);
+    background-color: var(--bg-main);
+}
+
+.feature-split-alt {
+    background-color: var(--surface-light);
+}
+
+.feature-split-container {
+    max-width: 1280px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5rem;
+    align-items: center;
+}
+
+.feature-split-image {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.feature-split-image img {
+    width: 100%;
+    max-width: 480px;
+    height: auto;
+    object-fit: contain;
+    transition: transform 0.5s ease;
+    filter: drop-shadow(0 16px 40px rgba(0,0,0,0.12));
+}
+
+.feature-split-image img:hover {
+    transform: scale(1.04);
+}
+
+.feature-split-content {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+}
+
+.feature-split-eyebrow {
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--primary);
+}
+
+.feature-split-title {
+    font-size: clamp(1.75rem, 3.5vw, 2.5rem);
+    font-weight: 700;
+    color: var(--text-charcoal);
+    line-height: 1.2;
+    margin: 0;
+}
+
+.feature-split-divider {
+    width: 60px;
+    height: 4px;
+    background: linear-gradient(90deg, var(--primary) 0%, var(--primary-dark) 100%);
+    border-radius: 2px;
+}
+
+.feature-split-desc {
+    font-size: 1.05rem;
+    line-height: 1.85;
+    color: var(--text-dark);
+}
+
+.feature-split-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.65rem;
+    margin-top: 0.25rem;
+}
+
+.feature-split-list li {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: var(--text-charcoal);
+}
+
+.feature-split-list li .material-symbols-outlined {
+    color: var(--primary);
+    font-size: 1.2rem;
+    flex-shrink: 0;
+    font-variation-settings: 'FILL' 1;
+}
+
+/* Mobile: content above, image below */
+@media (max-width: 768px) {
+    .feature-split-section {
+        padding: 3rem 1rem;
+    }
+
+    .feature-split-container {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    /* Section 1: image is first in HTML (left on desktop).
+       On mobile, push image below content. */
+    .feature-image-first .feature-split-image {
+        order: 2;
+    }
+
+    .feature-image-first .feature-split-content {
+        order: 1;
+    }
+
+    .feature-split-image img {
+        max-width: 280px;
+    }
+
+    .feature-split-desc {
+        font-size: 0.95rem;
+    }
+}
+
 /* Light Section Styles */
 .light-section {
     background-color: var(--bg-main);
@@ -849,8 +978,23 @@ nav a:hover {
 /* Footer */
 footer {
     border-top: 1px solid var(--tech-border);
-    background-color: var(--surface-light);
+    background-color: var(--bg-main);
     padding: 3rem 1rem;
+}
+
+[data-theme="dark"] footer {
+    background-color: var(--bg-main);
+    border-top-color: rgba(255, 255, 255, 0.08);
+}
+
+.footer-desc {
+    font-size: 0.875rem;
+    color: rgba(0, 0, 0, 0.5);
+    line-height: 1.6;
+}
+
+[data-theme="dark"] .footer-desc {
+    color: rgba(255, 255, 255, 0.45);
 }
 
 .footer-container {
@@ -1018,24 +1162,14 @@ footer {
     z-index: 2;
 }
 
-/* Desktop: support slide — title + content in left col, image in right col */
-.slide-support .hero-slide-dark-inner {
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: auto 1fr;
-}
-.slide-support .slide-support-title {
-    grid-column: 1;
-    grid-row: 1;
-}
-.slide-support .slide-support-content {
-    grid-column: 1;
-    grid-row: 2;
-}
+/* Desktop: support slide — content left, image right (same as IMU slide) */
 .slide-support .feature-image {
-    grid-column: 2;
-    grid-row: 1 / -1;
     display: flex;
     align-items: center;
+}
+
+.slide-support-img-mobile {
+    display: none;
 }
 
 .hero-slide-dark-inner h2 {
@@ -1145,29 +1279,9 @@ footer {
         display: none;
     }
 
-    /* Mobile support slide: title → image → content */
-    .slide-support .hero-slide-dark-inner {
-        display: flex;
-        flex-direction: column;
-    }
-
-    .slide-support .slide-support-title {
-        order: 1;
-    }
-
-    .slide-support .feature-image {
-        display: block !important;
-        text-align: center;
-        order: 2;
-    }
-
-    .slide-support .slide-support-content {
-        order: 3;
-    }
-
-    .slide-support .feature-image img {
-        max-width: 180px;
-        margin: 0 auto;
+    /* Mobile support slide — same as IMU slide (image hidden, bg shows through) */
+    .slide-support-img-mobile {
+        display: block;
     }
 
     .slide-support .hero-slide-dark-inner h2 {
