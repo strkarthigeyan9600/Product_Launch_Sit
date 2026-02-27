@@ -438,6 +438,117 @@ nav a:hover {
     opacity: 0.9;
 }
 
+/* ── CTA Strip (Below Carousel) ───────────────────────────── */
+.cta-strip {
+    position: relative;
+    background: linear-gradient(135deg, var(--surface-light) 0%, rgba(255, 228, 1, 0.04) 100%);
+    border-bottom: 1px solid var(--tech-border);
+    padding: 3.5rem 1.5rem 3rem;
+    overflow: hidden;
+}
+.cta-strip-accent {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--primary) 0%, var(--primary-dark) 60%, transparent 100%);
+}
+.cta-strip-inner {
+    max-width: 960px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2.5rem;
+}
+.cta-strip-eyebrow {
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    color: var(--primary);
+    margin: 0 0 0.5rem;
+}
+.cta-strip-text h2 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 1.65rem;
+    font-weight: 800;
+    color: var(--text-charcoal);
+    margin: 0 0 0.4rem;
+    line-height: 1.2;
+}
+.cta-strip-text p {
+    font-size: 0.92rem;
+    color: var(--text-dark);
+    margin: 0;
+    line-height: 1.6;
+    opacity: 0.85;
+}
+.cta-strip-buttons {
+    display: flex;
+    gap: 14px;
+    flex-shrink: 0;
+}
+.cta-strip-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 13px 26px;
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 13px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+    border-radius: 2px;
+}
+.cta-strip-enquire {
+    border: 2px solid var(--primary);
+    background: transparent;
+    color: var(--primary);
+}
+.cta-strip-enquire:hover {
+    background: var(--primary);
+    color: #000;
+    box-shadow: 0 2px 12px rgba(255, 228, 1, 0.25);
+}
+.cta-strip-buy {
+    background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+    color: #000;
+    border: 2px solid transparent;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+}
+.cta-strip-buy:hover {
+    box-shadow: 0 6px 24px rgba(212, 168, 0, 0.4);
+    transform: translateY(-2px);
+}
+@media (max-width: 768px) {
+    .cta-strip { padding: 2.25rem 1.25rem 2rem; }
+    .cta-strip-inner {
+        flex-direction: column;
+        text-align: center;
+    }
+    .cta-strip-text h2 { font-size: 1.35rem; }
+    .cta-strip-buttons {
+        width: 100%;
+        flex-direction: row;
+    }
+    .cta-strip-btn {
+        justify-content: center;
+        flex: 1;
+        padding: 13px 10px;
+        font-size: 12px;
+    }
+}
+@media (max-width: 380px) {
+    .cta-strip-buttons { flex-direction: column; }
+    .cta-strip-btn { width: 100%; padding: 14px; font-size: 13px; }
+}
+
 /* ── Feature Split Sections ───────────────────────────────── */
 .feature-split-section {
     padding: 5rem 1rem;
